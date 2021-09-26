@@ -1,0 +1,13 @@
+串行
+  最简单的一种，主要是为单线程环境和较小的堆内存环境设计。
+  -XX:+UseSerialGC 配置串行 GC
+并行
+  并行垃圾收集器适用于多核服务器，主要目标是增加吞吐量。
+  -XX:+UseParallelGC 配置并行GC
+CMS
+  CMS GC 的设计目标是避免在老年代垃圾收集时出现长时间的卡顿
+  主要调优目标是降低 GC 停顿导致的系统延迟
+  -XX:+UseConcMarkSweepGC 配置CMS GC
+G1
+  GC 最主要的设计目标是:将 STW 停顿的时间和分布，变成 可预期且可配置的。
+  -XX:+UseG1GC 配置G1 GC
