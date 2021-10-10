@@ -46,7 +46,12 @@ public class HttpHandler extends ChannelInboundHandlerAdapter {
     private void handlerTest(FullHttpRequest fullRequest, ChannelHandlerContext ctx, String body) {
         FullHttpResponse response = null;
         try {
-            String value = body; // 对接上次作业的httpclient或者okhttp请求另一个url的响应数据
+
+            String httpResult = java0.nio01.netty.HttpUtil.get("http://localhost:8801",null);
+            String value = httpResult;
+
+
+            // 对接上次作业的httpclient或者okhttp请求另一个url的响应数据
 
 //            httpGet ...  http://localhost:8801
 //            返回的响应，"hello,nio";
