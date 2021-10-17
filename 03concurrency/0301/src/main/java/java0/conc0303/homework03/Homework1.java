@@ -12,12 +12,7 @@ public class Homework1 {
 
         Homework1 demo = new Homework1();
 
-        FutureTask<Integer> task = new FutureTask<>(new Callable<Integer>() {
-            @Override
-            public Integer call() throws Exception {
-                return demo.sum();
-            }
-        });
+        FutureTask<Integer> task = new FutureTask<>(() -> demo.sum());
         new Thread(task).start();
         System.out.println(Thread.currentThread().getName() + "异步计算的结果为：" + task.get());
         System.out.println(Thread.currentThread().getName() + "使用时间：" + (System.currentTimeMillis() - start) + " ms");
