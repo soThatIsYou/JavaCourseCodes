@@ -9,7 +9,6 @@ public class Homework1 {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         long start = System.currentTimeMillis();
 
-        Homework1 demo = new Homework1();
 
         FutureTask<Integer> task = new FutureTask<>(() -> sum());
         new Thread(task).start();
